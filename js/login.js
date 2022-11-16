@@ -1,5 +1,5 @@
 const loginBox = document.querySelector('#log-in-box');
-const loginForm = document.querySelector('#log-in');
+const loginForm = document.querySelector('#login-form');
 const directToRegistration = document.querySelector('#click-to-register')
 
 const registrationBox = document.querySelector('#registration-box');
