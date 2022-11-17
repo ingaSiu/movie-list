@@ -28,7 +28,6 @@ body .wrapper-login {
 body .wrapper-login #log-in-box {
   width: 330px;
   height: 450px;
-  border: 1px solid black;
   box-shadow: 5px 20px 50px #000;
 }
 body .wrapper-login #log-in-box #login-form {
@@ -39,8 +38,11 @@ body .wrapper-login #log-in-box #login-form {
   background-color: darkgrey;
   height: 450px;
 }
+body .wrapper-login #log-in-box #login-form #fail-log {
+  display: none;
+  font-size: large;
+}
 body .wrapper-login #registration-box {
-  border: solid 1px black;
   width: 330px;
   height: 450px;
   box-shadow: 5px 20px 50px #000;
@@ -53,6 +55,12 @@ body .wrapper-login #registration-box #registration-form {
   padding-top: 50px;
   background-color: darkgray;
   height: 450px;
+}
+body .wrapper-login #registration-box #registration-form #fail-psw {
+  display: none;
+}
+body .wrapper-login #registration-box #registration-form #registration-ok {
+  display: none;
 }
 body .wrapper-login input {
   width: 60%;
@@ -75,4 +83,8 @@ body .wrapper-login .btn-redirect {
   border: none;
   background-color: transparent;
   font-size: large;
+}
+body .wrapper-login .btn-redirect:hover {
+  cursor: -webkit-grab;
+  cursor: grab;
 }/*# sourceMappingURL=style.css.map */

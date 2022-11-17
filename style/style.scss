@@ -30,7 +30,6 @@ body {
         #log-in-box{
             width: 330px;
             height: 450px;
-            border: 1px solid black;
             box-shadow: 5px 20px 50px #000;
 
             #login-form{
@@ -41,11 +40,15 @@ body {
                 background-color: darkgrey;
                 height: 450px;
 
+
+                #fail-log{
+                    display: none;
+                    font-size: large;
+                }
             }
         }  
 
         #registration-box{
-            border: solid 1px black;
             width: 330px;
             height: 450px;
             box-shadow: 5px 20px 50px #000;
@@ -59,6 +62,12 @@ body {
                 background-color: darkgray;
                 height: 450px;
                 
+                #fail-psw{
+                    display: none;
+                }
+                #registration-ok{
+                    display: none;
+                }
             }
         }
         input{
@@ -84,6 +93,10 @@ body {
             border: none;
             background-color: transparent;
             font-size: large;
+
+            &:hover{
+                cursor: grab;
+            }
         }
     }
 
