@@ -1,19 +1,419 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/search.css">
-    <script defer src="js/search.js"></script>
-    <title>Document</title>
-</head>
-<body>
-    <form id="search-form">
-        <input type="search" name="search">
-        <button type="submit" id="brn-search">OK</button>
-    </form>
-    <div id=""></div>
-    <button id="log-out">Log out</button>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style/search.css" />
+        <script defer src="js/search.js"></script>
+        <title>Document</title>
+    </head>
+    <body>
+        <form id="search-form">
+            <input type="search" name="search" />
+            <button type="submit" id="brn-search">OK</button>
+        </form>
+        <div id="wrapper-of-all-cards">
+            <!-- <div id="reviews-container"></div> -->
+
+            <div class="wrapper-movie-card">
+                <div class="image-container">
+                    <img
+                        src="https://image.tmdb.org/t/p/w500/6FfCtAuVAW8XJjZ7eWeLibRLWTw.jpg"
+                    />
+                </div>
+                <div class="details-container">
+                    <h2>Star Wars</h2>
+                    <p>Movie release date: 1977-05-25</p>
+                    <p>
+                        ABOUT: Princess Leia is captured and held hostage by the
+                        evil Imperial forces in their effort to take over the
+                        galactic Empire. Venturesome Luke Skywalker and dashing
+                        captain Han Solo team together with the loveable robot
+                        duo R2-D2 and C-3PO to rescue the beautiful princess and
+                        restore peace and justice in the Empire.
+                    </p>
+                    <button>GET REVIEWS</button><button>ADD TO LIST</button>
+                </div>
+            </div>
+            <div class="wrapper-movie-card">
+                <div class="image-container">
+                    <img
+                        src="https://image.tmdb.org/t/p/w500/9vaRPXj44Q2meHgt3VVfQufiHOJ.jpg"
+                    />
+                </div>
+                <div class="details-container">
+                    <h2>Star Trek</h2>
+                    <p>Movie release date: 2009-05-06</p>
+                    <p>
+                        ABOUT: The fate of the galaxy rests in the hands of
+                        bitter rivals. One, James Kirk, is a delinquent,
+                        thrill-seeking Iowa farm boy. The other, Spock, a
+                        Vulcan, was raised in a logic-based society that rejects
+                        all emotion. As fiery instinct clashes with calm reason,
+                        their unlikely but powerful partnership is the only
+                        thing capable of leading their crew through unimaginable
+                        danger, boldly going where no one has gone before. The
+                        human adventure has begun again.
+                    </p>
+                    <button>GET REVIEWS</button><button>ADD TO LIST</button>
+                </div>
+            </div>
+            <div class="wrapper-movie-card">
+                <div class="image-container">
+                    <img
+                        src="https://image.tmdb.org/t/p/w500/wqnLdwVXoBjKibFRR5U3y0aDUhs.jpg"
+                    />
+                </div>
+                <div class="details-container">
+                    <h2>Star Wars: The Force Awakens</h2>
+                    <p>Movie release date: 2015-12-15</p>
+                    <p>
+                        ABOUT: Thirty years after defeating the Galactic Empire,
+                        Han Solo and his allies face a new threat from the evil
+                        Kylo Ren and his army of Stormtroopers.
+                    </p>
+                    <button>GET REVIEWS</button><button>ADD TO LIST</button>
+                </div>
+            </div>
+            <div class="wrapper-movie-card">
+                <div class="image-container">
+                    <img
+                        src="https://image.tmdb.org/t/p/w500/cnQp8GmOWahIgQaH60Kwez3TNzw.jpg"
+                    />
+                </div>
+                <div class="details-container">
+                    <h2>Star Trek Beyond</h2>
+                    <p>Movie release date: 2016-07-07</p>
+                    <p>
+                        ABOUT: The USS Enterprise crew explores the furthest
+                        reaches of uncharted space, where they encounter a
+                        mysterious new enemy who puts them and everything the
+                        Federation stands for to the test.
+                    </p>
+                    <button>GET REVIEWS</button><button>ADD TO LIST</button>
+                </div>
+            </div>
+            <div class="wrapper-movie-card">
+                <div class="image-container">
+                    <img
+                        src="https://image.tmdb.org/t/p/w500/kOVEVeg59E0wsnXmF9nrh6OmWII.jpg"
+                    />
+                </div>
+                <div class="details-container">
+                    <h2>Star Wars: The Last Jedi</h2>
+                    <p>Movie release date: 2017-12-13</p>
+                    <p>
+                        ABOUT: Rey develops her newly discovered abilities with
+                        the guidance of Luke Skywalker, who is unsettled by the
+                        strength of her powers. Meanwhile, the Resistance
+                        prepares to do battle with the First Order.
+                    </p>
+                    <button>GET REVIEWS</button><button>ADD TO LIST</button>
+                </div>
+            </div>
+            <div class="wrapper-movie-card">
+                <div class="image-container">
+                    <img
+                        src="https://image.tmdb.org/t/p/w500/tEbDvivUfsCupngKIfMJJ725eAD.jpg"
+                    />
+                </div>
+                <div class="details-container">
+                    <h2>The Star</h2>
+                    <p>Movie release date: 2017-11-15</p>
+                    <p>
+                        ABOUT: A small but brave donkey and his animal friends
+                        become the unsung heroes of the greatest story ever
+                        told, the first Christmas.
+                    </p>
+                    <button>GET REVIEWS</button><button>ADD TO LIST</button>
+                </div>
+            </div>
+            <div class="wrapper-movie-card">
+                <div class="image-container">
+                    <img
+                        src="https://image.tmdb.org/t/p/w500/cldAwhvBmOv9jrd3bXWuqRHoXyq.jpg"
+                    />
+                </div>
+                <div class="details-container">
+                    <h2>Star Trek: Nemesis</h2>
+                    <p>Movie release date: 2002-12-13</p>
+                    <p>
+                        ABOUT: En route to the honeymoon of William Riker to
+                        Deanna Troi on her home planet of Betazed, Captain
+                        Jean-Luc Picard and the crew of the U.S.S. Enterprise
+                        receives word from Starfleet that a coup has resulted in
+                        the installation of a new Romulan political leader,
+                        Shinzon, who claims to seek peace with the human-backed
+                        United Federation of Planets. Once in enemy territory,
+                        the captain and his crew make a startling discovery:
+                        Shinzon is human, a slave from the Romulan sister planet
+                        of Remus, and has a secret, shocking relationship to
+                        Picard himself.
+                    </p>
+                    <button>GET REVIEWS</button><button>ADD TO LIST</button>
+                </div>
+            </div>
+            <div class="wrapper-movie-card">
+                <div class="image-container">
+                    <img
+                        src="https://image.tmdb.org/t/p/w500/wrFpXMNBRj2PBiN4Z5kix51XaIZ.jpg"
+                    />
+                </div>
+                <div class="details-container">
+                    <h2>A Star Is Born</h2>
+                    <p>Movie release date: 2018-10-03</p>
+                    <p>
+                        ABOUT: Seasoned musician Jackson Maine discovers — and
+                        falls in love with — struggling artist Ally. She has
+                        just about given up on her dream to make it big as a
+                        singer — until Jack coaxes her into the spotlight. But
+                        even as Ally's career takes off, the personal side of
+                        their relationship is breaking down, as Jack fights an
+                        ongoing battle with his own internal demons.
+                    </p>
+                    <button>GET REVIEWS</button><button>ADD TO LIST</button>
+                </div>
+            </div>
+            <div class="wrapper-movie-card">
+                <div class="image-container">
+                    <img
+                        src="https://image.tmdb.org/t/p/w500/3IGbjc5ZC5yxim5W0sFING2kdcz.jpg"
+                    />
+                </div>
+                <div class="details-container">
+                    <h2>Solo: A Star Wars Story</h2>
+                    <p>Movie release date: 2018-05-15</p>
+                    <p>
+                        ABOUT: Through a series of daring escapades deep within
+                        a dark and dangerous criminal underworld, Han Solo meets
+                        his mighty future copilot Chewbacca and encounters the
+                        notorious gambler Lando Calrissian.
+                    </p>
+                    <button>GET REVIEWS</button><button>ADD TO LIST</button>
+                </div>
+            </div>
+            <div class="wrapper-movie-card">
+                <div class="image-container">
+                    <img
+                        src="https://image.tmdb.org/t/p/w500/xQCMAHeg5M9HpDIqanYbWdr4brB.jpg"
+                    />
+                </div>
+                <div class="details-container">
+                    <h2>Star Trek: Insurrection</h2>
+                    <p>Movie release date: 1998-12-11</p>
+                    <p>
+                        ABOUT: When an alien race and factions within Starfleet
+                        attempt to take over a planet that has "regenerative"
+                        properties, it falls upon Captain Picard and the crew of
+                        the Enterprise to defend the planet's people as well as
+                        the very ideals upon which the Federation itself was
+                        founded.
+                    </p>
+                    <button>GET REVIEWS</button><button>ADD TO LIST</button>
+                </div>
+            </div>
+            <div class="wrapper-movie-card">
+                <div class="image-container">
+                    <img
+                        src="https://image.tmdb.org/t/p/w500/eXbCboT5mMv9RH1E7ogzIytN302.jpg"
+                    />
+                </div>
+                <div class="details-container">
+                    <h2>Star Trek Into Darkness</h2>
+                    <p>Movie release date: 2013-05-05</p>
+                    <p>
+                        ABOUT: When the crew of the Enterprise is called back
+                        home, they find an unstoppable force of terror from
+                        within their own organization has detonated the fleet
+                        and everything it stands for, leaving our world in a
+                        state of crisis. With a personal score to settle,
+                        Captain Kirk leads a manhunt to a war-zone world to
+                        capture a one man weapon of mass destruction. As our
+                        heroes are propelled into an epic chess game of life and
+                        death, love will be challenged, friendships will be torn
+                        apart, and sacrifices must be made for the only family
+                        Kirk has left: his crew.
+                    </p>
+                    <button>GET REVIEWS</button><button>ADD TO LIST</button>
+                </div>
+            </div>
+            <div class="wrapper-movie-card">
+                <div class="image-container">
+                    <img
+                        src="https://image.tmdb.org/t/p/w500/db32LaOibwEliAmSL2jjDF6oDdj.jpg"
+                    />
+                </div>
+                <div class="details-container">
+                    <h2>Star Wars: The Rise of Skywalker</h2>
+                    <p>Movie release date: 2019-12-18</p>
+                    <p>
+                        ABOUT: The surviving Resistance faces the First Order
+                        once again as the journey of Rey, Finn and Poe Dameron
+                        continues. With the power and knowledge of generations
+                        behind them, the final battle begins.
+                    </p>
+                    <button>GET REVIEWS</button><button>ADD TO LIST</button>
+                </div>
+            </div>
+            <div class="wrapper-movie-card">
+                <div class="image-container">
+                    <img
+                        src="https://image.tmdb.org/t/p/w500/2SatEFCs04oFRqkZuY1fODYXeFI.jpg"
+                    />
+                </div>
+                <div class="details-container">
+                    <h2>LEGO Star Wars Summer Vacation</h2>
+                    <p>Movie release date: 2022-08-05</p>
+                    <p>
+                        ABOUT: Looking for a much-needed break, Finn arranges a
+                        surprise vacation for his friends Rey, Poe, Rose,
+                        Chewie, BB-8, R2-D2, and C-3PO, aboard the luxurious
+                        Halcyon. However, Finn's plan to have one last hurrah
+                        together quickly goes awry.
+                    </p>
+                    <button>GET REVIEWS</button><button>ADD TO LIST</button>
+                </div>
+            </div>
+            <div class="wrapper-movie-card">
+                <div class="image-container">
+                    <img
+                        src="https://image.tmdb.org/t/p/w500/fYiaBZDjyXjvlY6EDZMAxIhBO1I.jpg"
+                    />
+                </div>
+                <div class="details-container">
+                    <h2>LEGO Star Wars Terrifying Tales</h2>
+                    <p>Movie release date: 2021-10-01</p>
+                    <p>
+                        ABOUT: Poe Dameron and BB-8 must face the greedy crime
+                        boss Graballa the Hutt, who has purchased Darth Vader’s
+                        castle and is renovating it into the galaxy’s first
+                        all-inclusive Sith-inspired luxury hotel.
+                    </p>
+                    <button>GET REVIEWS</button><button>ADD TO LIST</button>
+                </div>
+            </div>
+            <div class="wrapper-movie-card">
+                <div class="image-container">
+                    <img
+                        src="https://image.tmdb.org/t/p/w500/8pRMweo9WA1MvYOLsD2hWyFpZ1V.jpg"
+                    />
+                </div>
+                <div class="details-container">
+                    <h2>Rock Star</h2>
+                    <p>Movie release date: 2001-09-04</p>
+                    <p>
+                        ABOUT: A wannabe rock star who fronts a
+                        Pennsylvania-based tribute band is devastated when his
+                        kick him out of the group he founded. Things begin to
+                        look up for Izzy when he is asked to join Steel Dragon,
+                        the heavy metal rockers he had been imitating for so
+                        long. This film is loosely based on the true story of
+                        the band Judas Priest.
+                    </p>
+                    <button>GET REVIEWS</button><button>ADD TO LIST</button>
+                </div>
+            </div>
+            <div class="wrapper-movie-card">
+                <div class="image-container">
+                    <img
+                        src="https://image.tmdb.org/t/p/w500/i0yw1mFbB7sNGHCs7EXZPzFkdA1.jpg"
+                    />
+                </div>
+                <div class="details-container">
+                    <h2>Rogue One: A Star Wars Story</h2>
+                    <p>Movie release date: 2016-12-14</p>
+                    <p>
+                        ABOUT: A rogue band of resistance fighters unite for a
+                        mission to steal the Death Star plans and bring a new
+                        hope to the galaxy.
+                    </p>
+                    <button>GET REVIEWS</button><button>ADD TO LIST</button>
+                </div>
+            </div>
+            <div class="wrapper-movie-card">
+                <div class="image-container">
+                    <img
+                        src="https://image.tmdb.org/t/p/w500/wfiAfNwH6CMKxz4vRaW8CPTabtk.jpg"
+                    />
+                </div>
+                <div class="details-container">
+                    <h2>Star Trek: The Motion Picture</h2>
+                    <p>Movie release date: 1979-12-07</p>
+                    <p>
+                        ABOUT: When a destructive space entity is spotted
+                        approaching Earth, Admiral Kirk resumes command of the
+                        Starship Enterprise in order to intercept, examine, and
+                        hopefully stop it.
+                    </p>
+                    <button>GET REVIEWS</button><button>ADD TO LIST</button>
+                </div>
+            </div>
+            <div class="wrapper-movie-card">
+                <div class="image-container">
+                    <img
+                        src="https://image.tmdb.org/t/p/w500/ddfiAicb5zs4D2qCtpuJdsalePs.jpg"
+                    />
+                </div>
+                <div class="details-container">
+                    <h2>Bright Star</h2>
+                    <p>Movie release date: 2009-11-05</p>
+                    <p>
+                        ABOUT: In 1818, high-spirited young Fanny Brawne finds
+                        herself increasingly intrigued by the handsome but aloof
+                        poet John Keats, who lives next door to her family
+                        friends the Dilkes. After reading a book of his poetry,
+                        she finds herself even more drawn to the taciturn Keats.
+                        Although he agrees to teach her about poetry, Keats
+                        cannot act on his reciprocated feelings for Fanny, since
+                        as a struggling poet he has no money to support a wife.
+                    </p>
+                    <button>GET REVIEWS</button><button>ADD TO LIST</button>
+                </div>
+            </div>
+            <div class="wrapper-movie-card">
+                <div class="image-container">
+                    <img
+                        src="https://image.tmdb.org/t/p/w500/vrC1lkTktFQ4AqBfqf4PXoDDLcw.jpg"
+                    />
+                </div>
+                <div class="details-container">
+                    <h2>Star Trek: First Contact</h2>
+                    <p>Movie release date: 1996-11-22</p>
+                    <p>
+                        ABOUT: The Borg, a relentless race of cyborgs, are on a
+                        direct course for Earth. Violating orders to stay away
+                        from the battle, Captain Picard and the crew of the
+                        newly-commissioned USS Enterprise E pursue the Borg back
+                        in time to prevent the invaders from changing Federation
+                        history and assimilating the galaxy.
+                    </p>
+                    <button>GET REVIEWS</button><button>ADD TO LIST</button>
+                </div>
+            </div>
+            <div class="wrapper-movie-card">
+                <div class="image-container">
+                    <img
+                        src="https://image.tmdb.org/t/p/w500/rHsCYDGHFUarGh5k987b0EFU6kC.jpg"
+                    />
+                </div>
+                <div class="details-container">
+                    <h2>Star Trek: Generations</h2>
+                    <p>Movie release date: 1994-11-18</p>
+                    <p>
+                        ABOUT: Captain Jean-Luc Picard and the crew of the
+                        Enterprise-D find themselves at odds with the renegade
+                        scientist Soran who is destroying entire star systems.
+                        Only one man can help Picard stop Soran's scheme...and
+                        he's been dead for seventy-eight years.
+                    </p>
+                    <button>GET REVIEWS</button><button>ADD TO LIST</button>
+                </div>
+            </div>
+
+            <!-- <div id="reviews-container"></div> -->
+        </div>
+
+        <button id="log-out">Log out</button>
+    </body>
 </html>
