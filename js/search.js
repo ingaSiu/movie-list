@@ -1,6 +1,9 @@
 if (!localStorage.getItem("User")) {
     location.href = "./index.html";
 }
+const logedInUser = JSON.parse(localStorage.getItem("User"));
+const welcomeMessage = document.querySelector("#message");
+welcomeMessage.textContent = `Welcome, ${logedInUser.username}!`;
 
 const logOut = document.querySelector("#log-out");
 
@@ -70,6 +73,17 @@ const renderSearchCard = (result) => {
     const overview = document.createElement("p");
     overview.textContent = `ABOUT: ${result.overview}`;
     detailsContainer.appendChild(overview);
+    if (result.overview.length > 350) {
+        overview.textContent = `ABOUT: ${result.overview.slice(0, 350)}...`;
+
+        const btnMore = document.createElement("button");
+        btnMore.textContent = "Read more...";
+        btnMore.addEventListener("click", (event) => {
+            event.preventDefault();
+            overview.textContent = `ABOUT: ${result.overview}`;
+        });
+        detailsContainer.append(btnMore);
+    }
 
     const btnReview = document.createElement("button");
     btnReview.textContent = "GET REVIEWS";
@@ -84,9 +98,26 @@ const renderSearchCard = (result) => {
     const btnAddToList = document.createElement("button");
     btnAddToList.textContent = "ADD TO LIST";
     detailsContainer.appendChild(btnAddToList);
-    // btnAddToList.addEventListener('click', () => {
-    //     cia reiks paimti id filmo dedant i lista
-    // })
+    // btnAddToList.addEventListener("click", () => {
+    //     fetch('')
+    //     .then((response) =>{
+    //         if(response.ok) {
+    //             return response.json();
+    //         }
+    //     })
+    //     .then(()) => {
+
+    //     }
+    // });
+    //     fetch('')
+    //     .then((response) =>{
+    //         if(response.ok) {
+    //             return response.json();
+    //         }
+    //     })
+    //     .then(()) => {
+
+    //     }
 
     wrapperMovieCard.appendChild(imgContainer);
     wrapperMovieCard.appendChild(detailsContainer);
@@ -95,6 +126,7 @@ const renderSearchCard = (result) => {
 };
 
 const renderAllSearch = (searchArr) => {
+    wrapperAllMovieCards.innerHTML = "";
     searchArr.forEach((result) => {
         wrapperAllMovieCards.append(renderSearchCard(result));
     });

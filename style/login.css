@@ -2,22 +2,13 @@ body {
   margin: 0;
   padding: 0;
 }
-body .wrapper-join {
-  background-image: url("https://images.unsplash.com/photo-1543536448-d209d2d13a1c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80");
-  height: 100vh;
-}
-body .front-page {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
-}
-body .wrapper-bckimg {
+
+.wrapper-bckimg {
   background-image: url("https://images.unsplash.com/photo-1585951237318-9ea5e175b891?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80");
   height: 100vh;
 }
-body .wrapper-login {
+
+.wrapper-login {
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -25,12 +16,12 @@ body .wrapper-login {
   -webkit-backdrop-filter: blur(15px);
           backdrop-filter: blur(15px);
 }
-body .wrapper-login #log-in-box {
+.wrapper-login #log-in-box {
   width: 330px;
   height: 450px;
   box-shadow: 5px 20px 50px #000;
 }
-body .wrapper-login #log-in-box #login-form {
+.wrapper-login #log-in-box #login-form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,17 +29,17 @@ body .wrapper-login #log-in-box #login-form {
   background-color: darkgrey;
   height: 450px;
 }
-body .wrapper-login #log-in-box #login-form #fail-log {
+.wrapper-login #log-in-box #login-form #fail-log {
   display: none;
   font-size: large;
 }
-body .wrapper-login #registration-box {
+.wrapper-login #registration-box {
   width: 330px;
   height: 450px;
   box-shadow: 5px 20px 50px #000;
   display: none;
 }
-body .wrapper-login #registration-box #registration-form {
+.wrapper-login #registration-box #registration-form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -56,13 +47,13 @@ body .wrapper-login #registration-box #registration-form {
   background-color: darkgray;
   height: 450px;
 }
-body .wrapper-login #registration-box #registration-form #fail-psw {
+.wrapper-login #registration-box #registration-form #fail-psw {
   display: none;
 }
-body .wrapper-login #registration-box #registration-form #registration-ok {
+.wrapper-login #registration-box #registration-form #registration-ok {
   display: none;
 }
-body .wrapper-login input {
+.wrapper-login input {
   width: 60%;
   height: 20px;
   background: #e0dede;
@@ -74,17 +65,17 @@ body .wrapper-login input {
   outline: none;
   border-radius: 5px;
 }
-body .wrapper-login .btn-login {
+.wrapper-login .btn-login {
   width: 100px;
   height: 30px;
 }
-body .wrapper-login .btn-redirect {
+.wrapper-login .btn-redirect {
   margin-top: 20px;
   border: none;
   background-color: transparent;
   font-size: large;
 }
-body .wrapper-login .btn-redirect:hover {
+.wrapper-login .btn-redirect:hover {
   cursor: -webkit-grab;
   cursor: grab;
 }/*# sourceMappingURL=login.css.map */

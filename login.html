@@ -1,41 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/login.css">
-    <script defer src="js/login.js"></script>
-    <title>Document</title>
-</head>
-<body>
-    <div class="wrapper-bckimg" >
-        <div class="wrapper-login">
-       
-            <div id="log-in-box">
-                <form id="login-form">
-                    <input type="text" name="email" id="user-mail" placeholder="Email">
-                    <input type="password" name="password" id="password-log" placeholder="Password">
-                    <button type="submit" id="btn-log" class="btn-login">Log in</button>
-                    <p id="fail-log">Failed to log in</p>
-                    <button id="click-to-register" class="btn-redirect">Not a member yet? Register! →</button>
-                </form>
-            </div>
-    
-            <div id="registration-box">
-                <form id="registration-form">
-                    <input type="email" name="email" id="email" placeholder="Email">
-                    <input type="text" name="username" placeholder="Username">
-                    <input type="password" name="password" id="password" placeholder="Password">
-                    <input type="password" name="repeatPassword" id="repeat-password" placeholder="Confirm password">
-                    <button type="submit" id="btn-register" class="btn-login">Sign up</button>
-                    <p id="fail-psw">Passwords don't match</p>
-                    <p id="registration-ok">Succesful registration. Please log-in</p>
-                    <button id="already-member" class="btn-redirect">Already a member? Please log in →</button>
-                </form>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style/login.css" />
+        <script defer src="js/login.js"></script>
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="wrapper-bckimg">
+            <div class="wrapper-login">
+                <div id="log-in-box">
+                    <form id="login-form">
+                        <input
+                            type="text"
+                            name="email"
+                            id="user-mail"
+                            placeholder="Email"
+                        />
+                        <input
+                            type="password"
+                            name="password"
+                            id="password-log"
+                            placeholder="Password"
+                        />
+                        <button type="submit" id="btn-log" class="btn-login">
+                            Log in
+                        </button>
+                        <p id="fail-log">Failed to log in</p>
+                        <button id="click-to-register" class="btn-redirect">
+                            Not a member yet? Register! →
+                        </button>
+                    </form>
+                </div>
+
+                <div id="registration-box">
+                    <form id="registration-form">
+                        <input
+                            type="email"
+                            name="email"
+                            id="email"
+                            placeholder="Email"
+                        />
+                        <input
+                            type="text"
+                            name="username"
+                            placeholder="Username"
+                        />
+                        <input
+                            type="password"
+                            name="password"
+                            id="password"
+                            placeholder="Password"
+                        />
+                        <input
+                            type="password"
+                            name="repeatPassword"
+                            id="repeat-password"
+                            placeholder="Confirm password"
+                        />
+                        <button
+                            type="submit"
+                            id="btn-register"
+                            class="btn-login"
+                        >
+                            Sign up
+                        </button>
+                        <p id="fail-psw">Passwords don't match</p>
+                        <p id="registration-ok">
+                            Succesful registration. Please log-in
+                        </p>
+                        <button id="already-member" class="btn-redirect">
+                            Already a member? Please log in →
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
-  
-</body>
+    </body>
 </html>
