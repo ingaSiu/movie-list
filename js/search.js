@@ -58,6 +58,9 @@ const renderSearchCard = (result) => {
         "src",
         "https://image.tmdb.org/t/p/w500" + result.poster_path
     );
+    if (!result.poster_path) {
+        moviePoster.setAttribute("src", "images/dog_img.jpg");
+    }
     imgContainer.appendChild(moviePoster);
 
     const detailsContainer = document.createElement("div");
@@ -78,9 +81,17 @@ const renderSearchCard = (result) => {
 
         const btnMore = document.createElement("button");
         btnMore.textContent = "Read more...";
-        btnMore.addEventListener("click", (event) => {
-            event.preventDefault();
-            overview.textContent = `ABOUT: ${result.overview}`;
+        btnMore.addEventListener("click", () => {
+            if (overview.textContent.length > 361) {
+                overview.textContent = `ABOUT: ${result.overview.slice(
+                    0,
+                    350
+                )}...`;
+                btnMore.textContent = "Read more...";
+            } else {
+                overview.textContent = `ABOUT: ${result.overview}`;
+                btnMore.textContent = "Read less...";
+            }
         });
         detailsContainer.append(btnMore);
     }
