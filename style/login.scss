@@ -11,46 +11,38 @@
     justify-content: center;
     align-items: center;
     backdrop-filter: blur(15px);
-    #log-in-box {
-        width: 330px;
+
+    #login-form,
+    #registration-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 50px;
+        background-color: darkgrey;
         height: 450px;
-        box-shadow: 5px 20px 50px #000;
-
-        #login-form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-top: 50px;
-            background-color: darkgrey;
-            height: 450px;
-
-            #fail-log {
-                display: none;
-                font-size: large;
-            }
-        }
     }
-
+    #log-in-box,
     #registration-box {
         width: 330px;
         height: 450px;
         box-shadow: 5px 20px 50px #000;
+    }
+    #fail-log,
+    #fail-psw,
+    #registration-ok {
+        display: none;
+        text-align: center;
+        padding: 15px;
+        font-weight: bold;
+        font-size: large;
+        color: red;
+    }
+
+    #registration-box {
         display: none;
 
-        #registration-form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-top: 50px;
-            background-color: darkgray;
-            height: 450px;
-
-            #fail-psw {
-                display: none;
-            }
-            #registration-ok {
-                display: none;
-            }
+        #registration-ok {
+            color: forestgreen;
         }
     }
     input {
@@ -69,6 +61,8 @@
     .btn-login {
         width: 100px;
         height: 30px;
+        border: none;
+        border-radius: 5px;
     }
 
     .btn-redirect {

@@ -1,6 +1,8 @@
 body {
   margin: 0;
   padding: 0;
+  font-family: "Noto Sans Display", sans-serif;
+  font-family: "Noto Serif", serif;
 }
 
 .wrapper-join {
@@ -14,4 +16,17 @@ body {
   height: 100vh;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  font-size: 35px;
+  font-weight: bolder;
+}
+.front-page button {
+  border: none;
+  width: 150px;
+  height: 50px;
+  font-size: 20px;
+  background-color: #a29aa4;
+}
+.front-page button:hover {
+  background-color: #b6c1c2;
 }/*# sourceMappingURL=index.css.map */

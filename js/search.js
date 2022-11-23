@@ -3,7 +3,7 @@ if (!localStorage.getItem("User")) {
 }
 const logedInUser = JSON.parse(localStorage.getItem("User"));
 const welcomeMessage = document.querySelector("#message");
-welcomeMessage.textContent = `Welcome, ${logedInUser.username}!`;
+welcomeMessage.textContent = `Welcome, ${logedInUser.name}!`;
 
 const logOut = document.querySelector("#log-out");
 

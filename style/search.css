@@ -1,10 +1,17 @@
 body {
   margin: 0;
   padding: 0;
+  font-family: "Noto Sans Display", sans-serif;
+  font-family: "Noto Serif", serif;
 }
 
 .navbar {
   display: flex;
+}
+.navbar .welcome {
+  display: flex;
+  flex-grow: 1;
+  gap: 10px;
 }
 .navbar .welcome .logo {
   border-radius: 50%;
@@ -16,6 +23,17 @@ body {
 .navbar .welcome p {
   font-size: large;
 }
+.navbar .links {
+  flex-grow: 2;
+  display: flex;
+  justify-content: space-evenly;
+}
+.navbar .links a {
+  text-decoration: none;
+}
+.navbar .links li {
+  list-style: none;
+}
 
 .logo {
   border-radius: 50%;
@@ -25,12 +43,23 @@ body {
   height: 50px;
 }
 
+.search-wrapper #search-form input {
+  width: 250px;
+  font-size: 15px;
+  border: 2px solid grey;
+  outline: darkgreen;
+}
+.search-wrapper #search-form button {
+  width: 75px;
+  height: 30px;
+}
+
 #wrapper-of-all-cards {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 15px;
-  margin: 15px;
+  margin: 20px;
 }
 #wrapper-of-all-cards .wrapper-movie-card {
   display: flex;

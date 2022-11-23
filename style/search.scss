@@ -7,7 +7,19 @@
     width: 50px;
     height: 50px;
 }
-#search-form {
+.search-wrapper {
+    #search-form {
+        input {
+            width: 250px;
+            font-size: 15px;
+            border: 2px solid grey;
+            outline: darkgreen;
+        }
+        button {
+            width: 75px;
+            height: 30px;
+        }
+    }
 }
 
 #wrapper-of-all-cards {
@@ -15,7 +27,7 @@
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 15px;
-    margin: 15px;
+    margin: 20px;
 
     .wrapper-movie-card {
         display: flex;

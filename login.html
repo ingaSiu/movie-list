@@ -4,6 +4,12 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@300&family=Noto+Serif&display=swap"
+            rel="stylesheet"
+        />
         <link rel="stylesheet" href="style/login.css" />
         <script defer src="js/login.js"></script>
         <title>Document</title>
@@ -18,17 +24,22 @@
                             name="email"
                             id="user-mail"
                             placeholder="Email"
+                            required
                         />
                         <input
                             type="password"
                             name="password"
                             id="password-log"
                             placeholder="Password"
+                            required
                         />
                         <button type="submit" id="btn-log" class="btn-login">
                             Log in
                         </button>
-                        <p id="fail-log">Failed to log in</p>
+                        <p id="fail-log">
+                            Failed to log in. <br />
+                            Your email and/or password do not match
+                        </p>
                         <button id="click-to-register" class="btn-redirect">
                             Not a member yet? Register! →
                         </button>
@@ -42,23 +53,27 @@
                             name="email"
                             id="email"
                             placeholder="Email"
+                            required
                         />
                         <input
                             type="text"
                             name="username"
                             placeholder="Username"
+                            required
                         />
                         <input
                             type="password"
                             name="password"
                             id="password"
                             placeholder="Password"
+                            required
                         />
                         <input
                             type="password"
                             name="repeatPassword"
                             id="repeat-password"
                             placeholder="Confirm password"
+                            required
                         />
                         <button
                             type="submit"

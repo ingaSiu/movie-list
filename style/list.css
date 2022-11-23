@@ -1,10 +1,17 @@
 body {
   margin: 0;
   padding: 0;
+  font-family: "Noto Sans Display", sans-serif;
+  font-family: "Noto Serif", serif;
 }
 
 .navbar {
   display: flex;
+}
+.navbar .welcome {
+  display: flex;
+  flex-grow: 1;
+  gap: 10px;
 }
 .navbar .welcome .logo {
   border-radius: 50%;
@@ -15,4 +22,15 @@ body {
 }
 .navbar .welcome p {
   font-size: large;
+}
+.navbar .links {
+  flex-grow: 2;
+  display: flex;
+  justify-content: space-evenly;
+}
+.navbar .links a {
+  text-decoration: none;
+}
+.navbar .links li {
+  list-style: none;
 }/*# sourceMappingURL=list.css.map */

@@ -1,6 +1,8 @@
 body {
   margin: 0;
   padding: 0;
+  font-family: "Noto Sans Display", sans-serif;
+  font-family: "Noto Serif", serif;
 }
 
 .wrapper-bckimg {
@@ -16,12 +18,8 @@ body {
   -webkit-backdrop-filter: blur(15px);
           backdrop-filter: blur(15px);
 }
-.wrapper-login #log-in-box {
-  width: 330px;
-  height: 450px;
-  box-shadow: 5px 20px 50px #000;
-}
-.wrapper-login #log-in-box #login-form {
+.wrapper-login #login-form,
+.wrapper-login #registration-form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,29 +27,27 @@ body {
   background-color: darkgrey;
   height: 450px;
 }
-.wrapper-login #log-in-box #login-form #fail-log {
-  display: none;
-  font-size: large;
-}
+.wrapper-login #log-in-box,
 .wrapper-login #registration-box {
   width: 330px;
   height: 450px;
   box-shadow: 5px 20px 50px #000;
+}
+.wrapper-login #fail-log,
+.wrapper-login #fail-psw,
+.wrapper-login #registration-ok {
+  display: none;
+  text-align: center;
+  padding: 15px;
+  font-weight: bold;
+  font-size: large;
+  color: red;
+}
+.wrapper-login #registration-box {
   display: none;
 }
-.wrapper-login #registration-box #registration-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 50px;
-  background-color: darkgray;
-  height: 450px;
-}
-.wrapper-login #registration-box #registration-form #fail-psw {
-  display: none;
-}
-.wrapper-login #registration-box #registration-form #registration-ok {
-  display: none;
+.wrapper-login #registration-box #registration-ok {
+  color: forestgreen;
 }
 .wrapper-login input {
   width: 60%;
@@ -68,6 +64,8 @@ body {
 .wrapper-login .btn-login {
   width: 100px;
   height: 30px;
+  border: none;
+  border-radius: 5px;
 }
 .wrapper-login .btn-redirect {
   margin-top: 20px;
