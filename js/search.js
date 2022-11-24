@@ -47,6 +47,90 @@ searchForm.addEventListener("submit", (event) => {
     }
 });
 
+const saveMovie = (movieId, listId) => {
+    fetch("http://ingasiu.online/movie", {
+        method: "POST",
+        headers: {
+            Authorization: "Bearer ozjjlUNIAtI2ThgwbYQvPUKZFHmNPdJqzv0gyT1i",
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            movie_id: movieId,
+            list_id: listId,
+        }),
+    })
+        .then((response) => {
+            if (response.ok) {
+                return response.json();
+            }
+        })
+        .then((listMovie) => {
+            if (!listMovie) {
+                alert("failed");
+                return;
+            }
+
+            alert("added to list");
+        });
+};
+
+//"name" is name of the list
+const saveListAndSaveMovie = (name, movieId) => {
+    fetch("http://ingasiu.online/list", {
+        method: "POST",
+        headers: {
+            Authorization: "Bearer ozjjlUNIAtI2ThgwbYQvPUKZFHmNPdJqzv0gyT1i",
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            name: name,
+            user_id: logedInUser.id,
+        }),
+    })
+        .then((response) => {
+            if (response.ok) {
+                return response.json();
+            }
+        })
+        .then((list) => {
+            if (!list) {
+                alert("failed");
+                return;
+            }
+            saveMovie(movieId, list.id);
+        });
+};
+
+const addMovieToList = (movieId) => {
+    fetch(`http://ingasiu.online/user-lists/${logedInUser.id}`, {
+        method: "GET",
+        headers: {
+            Authorization: "Bearer ozjjlUNIAtI2ThgwbYQvPUKZFHmNPdJqzv0gyT1i",
+        },
+    })
+        .then((response) => {
+            //if got the lists return them to other 'then'
+            if (response.ok) {
+                return response.json();
+            }
+            //if no lists found - create new list and save movie to that list
+            if (response.status === 404) {
+                saveListAndSaveMovie("My List", movieId);
+                return;
+            }
+            //if reponse is not ok and not 404 then something has failed.
+            //return error and do nothing else
+            alert("failed");
+        })
+        .then((lists) => {
+            //if response was ok and lists were found then save movie to
+            //first found list. lists var might be empty if get failed
+            if (lists) {
+                saveMovie(movieId, lists[0].id);
+            }
+        });
+};
+//result is a movie, should name it like that
 const renderSearchCard = (result) => {
     const wrapperMovieCard = document.createElement("div");
     wrapperMovieCard.setAttribute("class", "wrapper-movie-card");
@@ -108,28 +192,11 @@ const renderSearchCard = (result) => {
 
     const btnAddToList = document.createElement("button");
     btnAddToList.textContent = "ADD TO LIST";
+
+    btnAddToList.addEventListener("click", () => {
+        addMovieToList(result.id);
+    });
     detailsContainer.appendChild(btnAddToList);
-    // btnAddToList.addEventListener("click", () => {
-    //     fetch('')
-    //     .then((response) =>{
-    //         if(response.ok) {
-    //             return response.json();
-    //         }
-    //     })
-    //     .then(()) => {
-
-    //     }
-    // });
-    //     fetch('')
-    //     .then((response) =>{
-    //         if(response.ok) {
-    //             return response.json();
-    //         }
-    //     })
-    //     .then(()) => {
-
-    //     }
-
     wrapperMovieCard.appendChild(imgContainer);
     wrapperMovieCard.appendChild(detailsContainer);
 
