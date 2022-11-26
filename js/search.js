@@ -180,15 +180,15 @@ const renderSearchCard = (result) => {
         detailsContainer.append(btnMore);
     }
 
-    const btnReview = document.createElement("button");
-    btnReview.textContent = "GET REVIEWS";
+    const btnMoreInfo = document.createElement("button");
+    btnMoreInfo.textContent = "GET MORE INFO";
     // btnReview.addEventListener('click', () => {
     // const reviewCard = document.createElement('div');
     // wrapperMovieCard.append(reviewCard);
     //ka daryti su review container, jis turi buti korteles viduj
     //     //pagetina reviews, kurie yra pridedami i atskira diva
     // })
-    detailsContainer.appendChild(btnReview);
+    detailsContainer.appendChild(btnMoreInfo);
 
     const btnAddToList = document.createElement("button");
     btnAddToList.textContent = "ADD TO LIST";
