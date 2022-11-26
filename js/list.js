@@ -33,9 +33,19 @@ const renderListCard = (movie, id) => {
     }
     imgContainer.appendChild(moviePoster);
 
+    const btnMoreInfo = document.createElement("button");
+    btnMoreInfo.textContent = "GET MORE INFO";
+    //prideti on click funcionaluma
+
+    const btnDelteCard = document.createElement("button");
+    btnDelteCard.textContent = "DELETE MOVIE CARD";
+    btnDelteCard.addEventListener("click", () => {
+        //paimti id, pagal kuri reiks istrinti filma is listo
+    });
     wrapperListCard.appendChild(movieName);
     wrapperListCard.appendChild(imgContainer);
-
+    wrapperListCard.appendChild(btnMoreInfo);
+    wrapperListCard.appendChild(btnDelteCard);
     listWrapper.append(wrapperListCard);
 };
 

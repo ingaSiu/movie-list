@@ -1,2 +1,25 @@
-@use 'main';
-@use 'navbar';
+@use "main";
+@use "navbar";
+
+#list-wrapper {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+
+    .wrapper-list-card {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+        h3 {
+            max-width: 250px;
+            text-align: center;
+        }
+        img {
+            max-width: 300px;
+            height: 350px;
+            object-fit: contain;
+        }
+    }
+}

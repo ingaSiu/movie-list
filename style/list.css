@@ -33,4 +33,27 @@ body {
 }
 .navbar .links li {
   list-style: none;
+}
+
+#list-wrapper {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+#list-wrapper .wrapper-list-card {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+}
+#list-wrapper .wrapper-list-card h3 {
+  max-width: 250px;
+  text-align: center;
+}
+#list-wrapper .wrapper-list-card img {
+  max-width: 300px;
+  height: 350px;
+  -o-object-fit: contain;
+     object-fit: contain;
 }/*# sourceMappingURL=list.css.map */
