@@ -1,7 +1,15 @@
 if (!localStorage.getItem("User")) {
     location.href = "./index.html";
 }
+
+const logedInUser = JSON.parse(localStorage.getItem("User"));
+const welcomeMessage = document.querySelector("#message");
+welcomeMessage.textContent = `Welcome, ${logedInUser.name}!`;
+
 const moviePageWrapper = document.querySelector(".moviepage-wrapper");
+const movieBlock = document.querySelector("#movie-info-block");
+let reviewArr = [];
+const reviewsWrapper = document.querySelector(".reviews-wrapper");
 let movieId;
 //some parsing stuff for get params from URL
 //i am using movie_id get param to know which movie info to show
@@ -32,12 +40,28 @@ const renderMovieInfo = (movie) => {
     info.setAttribute("class", "info-div");
 
     const overview = document.createElement("p");
-    overview.textContent = movie.overview;
+    overview.textContent = `ABOUT: ${movie.overview}`;
     info.appendChild(overview);
 
+    const releaseDate = document.createElement("p");
+    releaseDate.textContent = `RELEASE DATE: ${movie.release_date}`;
+    info.append(releaseDate);
+
+    const runtime = document.createElement("p");
+    runtime.textContent = `RUNTIME: ${movie.runtime} min.`;
+    info.appendChild(runtime);
+
+    const vote = document.createElement("p");
+    vote.textContent = `VOTE AVERAGE: ${movie.vote_average} (from ${movie.vote_count} voters)`;
+    info.appendChild(vote);
+
+    const budget = document.createElement("p");
+    budget.textContent = `BUDGET: ${movie.budget}$`;
+    info.appendChild(budget);
+    movieBlock.appendChild(imgContainer);
+    movieBlock.appendChild(info);
     moviePageWrapper.appendChild(movieName);
-    moviePageWrapper.appendChild(imgContainer);
-    moviePageWrapper.appendChild(info);
+    moviePageWrapper.appendChild(movieBlock);
 };
 
 const getMovieAndRender = (movieId) => {
@@ -63,6 +87,74 @@ const getMovieAndRender = (movieId) => {
         });
 };
 getMovieAndRender(movieId);
+
+const renderReview = (review) => {
+    const reviewBox = document.createElement("div");
+    reviewBox.setAttribute("class", "review-box");
+
+    const author = document.createElement("p");
+    author.textContent = `REVIEW AUTHOR: ${review.author}`;
+    reviewBox.appendChild(author);
+
+    const content = document.createElement("p");
+    content.setAttribute("class", "review-text");
+    content.textContent = review.content;
+    reviewBox.appendChild(content);
+
+    if (review.content.length > 350) {
+        content.textContent = `REVIEW: ${review.content.slice(0, 350)}...`;
+
+        const btnMore = document.createElement("button");
+        btnMore.textContent = "Read more...";
+        btnMore.addEventListener("click", () => {
+            if (content.textContent.length > 361) {
+                content.textContent = `REVIEW: ${review.content.slice(
+                    0,
+                    350
+                )}...`;
+                btnMore.textContent = "Read more...";
+            } else {
+                content.textContent = `REVIEW: ${review.content}`;
+                btnMore.textContent = "Read less...";
+            }
+        });
+        reviewBox.append(btnMore);
+    }
+
+    reviewsWrapper.appendChild(reviewBox);
+};
+
+const renderAllReviews = (reviews) => {
+    reviews.forEach((review) => {
+        renderReview(review);
+    });
+};
+
+const getReviews = (movieId) => {
+    let url = new URL(`https://api.themoviedb.org/3/movie/${movieId}/reviews`);
+
+    const params = {
+        api_key: "c02a236a02faf40ecbb1944497d71eff",
+    };
+
+    url.search = new URLSearchParams(params).toString();
+
+    fetch(url)
+        .then((response) => {
+            if (response.ok) {
+                return response.json();
+            }
+        })
+        .then((reviews) => {
+            if (reviews) {
+                reviewArr = reviews.results;
+                console.log(reviewArr);
+                renderAllReviews(reviewArr);
+            }
+        });
+};
+getReviews(movieId);
+
 const logOut = document.querySelector("#log-out");
 logOut.addEventListener("click", () => {
     localStorage.removeItem("User");

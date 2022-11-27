@@ -1,1 +1,50 @@
-/*# sourceMappingURL=moviepage.css.map */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Sans Display", sans-serif;
+  font-family: "Noto Serif", serif;
+}
+
+.navbar {
+  display: flex;
+}
+.navbar .welcome {
+  display: flex;
+  flex-grow: 1;
+  gap: 10px;
+}
+.navbar .welcome .logo {
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 50px;
+  height: 50px;
+}
+.navbar .welcome p {
+  font-size: large;
+}
+.navbar .links {
+  flex-grow: 2;
+  display: flex;
+  justify-content: space-evenly;
+}
+.navbar .links a {
+  text-decoration: none;
+}
+.navbar .links li {
+  list-style: none;
+}
+
+.moviepage-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.moviepage-wrapper #movie-info-block {
+  display: flex;
+  gap: 10px;
+}
+
+.reviews-wrapper .review-box {
+  width: 33%;
+  border: 1px solid black;
+}/*# sourceMappingURL=moviepage.css.map */
