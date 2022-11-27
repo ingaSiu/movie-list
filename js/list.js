@@ -35,27 +35,57 @@ const renderListCard = (movie, id) => {
 
     const btnMoreInfo = document.createElement("button");
     btnMoreInfo.textContent = "GET MORE INFO";
-    //prideti on click funcionaluma
-
+    const infoLink = document.createElement("a");
+    infoLink.setAttribute("href", "./moviepage.html?movie_id=" + movie.id);
+    infoLink.setAttribute("target", "_blank");
+    infoLink.append(btnMoreInfo);
     const btnDelteCard = document.createElement("button");
     btnDelteCard.textContent = "DELETE MOVIE CARD";
     btnDelteCard.addEventListener("click", () => {
-        //paimti id, pagal kuri reiks istrinti filma is listo
+        fetch(`http://ingasiu.online/movie/${id}`, {
+            method: "DELETE",
+            headers: {
+                Authorization:
+                    "Bearer ozjjlUNIAtI2ThgwbYQvPUKZFHmNPdJqzv0gyT1i",
+            },
+        }).then((response) => {
+            if (response.ok) {
+                alert("movie has been removed");
+                moviesArr = moviesArr.filter((movie) => {
+                    if (id !== movie.id) {
+                        return true;
+                    }
+                    return false;
+                });
+                renderMovieList(moviesArr);
+                return;
+            }
+            //if reponse is not ok and not 404 then something has failed.
+            //return error and do nothing else
+            alert("failed to remove");
+        });
     });
     wrapperListCard.appendChild(movieName);
     wrapperListCard.appendChild(imgContainer);
-    wrapperListCard.appendChild(btnMoreInfo);
+    wrapperListCard.appendChild(infoLink);
     wrapperListCard.appendChild(btnDelteCard);
     listWrapper.append(wrapperListCard);
 };
 
 const renderMovieList = (movies) => {
+    listWrapper.innerHTML = "";
     movies.forEach((movie) => {
         getMovieInfoAndRender(movie);
     });
 };
 
 const getMovieInfoAndRender = (movie) => {
+    //on 1st get info is saved to this property so if i have it
+    //i dont need to do a request to get it again. i can render straight away
+    if (movie.movie_info) {
+        renderListCard(movie.movie_info, movie.id);
+        return;
+    }
     let url = new URL(`https://api.themoviedb.org/3/movie/${movie.movie_id}`);
 
     const params = {
@@ -72,6 +102,9 @@ const getMovieInfoAndRender = (movie) => {
         })
         .then((movieInfoResult) => {
             if (movieInfoResult) {
+                //set movie info if it will be neeeded for later
+                //would not want to request same movie again for no reason
+                movie.movie_info = movieInfoResult;
                 renderListCard(movieInfoResult, movie.id);
             }
             console.log(movieInfoResult);

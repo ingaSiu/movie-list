@@ -143,7 +143,7 @@ const renderSearchCard = (result) => {
         "https://image.tmdb.org/t/p/w500" + result.poster_path
     );
     if (!result.poster_path) {
-        moviePoster.setAttribute("src", "images/dog_img.jpg");
+        moviePoster.setAttribute("src", "images/shiba.jpg");
     }
     imgContainer.appendChild(moviePoster);
 
