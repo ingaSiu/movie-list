@@ -12,6 +12,13 @@
     align-items: center;
     backdrop-filter: blur(15px);
 
+    #log-in-box,
+    #registration-box {
+        width: 330px;
+        height: 450px;
+        box-shadow: 5px 20px 50px #000;
+    }
+
     #login-form,
     #registration-form {
         display: flex;
@@ -21,12 +28,7 @@
         background-color: darkgrey;
         height: 450px;
     }
-    #log-in-box,
-    #registration-box {
-        width: 330px;
-        height: 450px;
-        box-shadow: 5px 20px 50px #000;
-    }
+
     #fail-log,
     #fail-psw,
     #registration-ok {

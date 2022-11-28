@@ -33,14 +33,21 @@ const renderListCard = (movie, id) => {
     }
     imgContainer.appendChild(moviePoster);
 
+    const btnDiv = document.createElement("div");
+    btnDiv.setAttribute("class", "btn-div");
+
     const btnMoreInfo = document.createElement("button");
-    btnMoreInfo.textContent = "GET MORE INFO";
+    btnMoreInfo.textContent = "More Information";
+    btnMoreInfo.setAttribute("class", "btn-card");
+
     const infoLink = document.createElement("a");
     infoLink.setAttribute("href", "./moviepage.html?movie_id=" + movie.id);
     infoLink.setAttribute("target", "_blank");
     infoLink.append(btnMoreInfo);
+
     const btnDelteCard = document.createElement("button");
-    btnDelteCard.textContent = "DELETE MOVIE CARD";
+    btnDelteCard.textContent = "Delete Movie Card";
+    btnDelteCard.setAttribute("class", "btn-card");
     btnDelteCard.addEventListener("click", () => {
         fetch(`http://ingasiu.online/movie/${id}`, {
             method: "DELETE",
@@ -50,7 +57,7 @@ const renderListCard = (movie, id) => {
             },
         }).then((response) => {
             if (response.ok) {
-                alert("movie has been removed");
+                confirm("Do you want to delete this movie from list?");
                 moviesArr = moviesArr.filter((movie) => {
                     if (id !== movie.id) {
                         return true;
@@ -67,8 +74,9 @@ const renderListCard = (movie, id) => {
     });
     wrapperListCard.appendChild(movieName);
     wrapperListCard.appendChild(imgContainer);
-    wrapperListCard.appendChild(infoLink);
-    wrapperListCard.appendChild(btnDelteCard);
+    btnDiv.appendChild(infoLink);
+    btnDiv.appendChild(btnDelteCard);
+    wrapperListCard.appendChild(btnDiv);
     listWrapper.append(wrapperListCard);
 };
 

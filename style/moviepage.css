@@ -7,6 +7,8 @@ body {
 
 .navbar {
   display: flex;
+  margin: 15px;
+  border-bottom: 2px solid #f5eeee;
 }
 .navbar .welcome {
   display: flex;
@@ -17,8 +19,8 @@ body {
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
 }
 .navbar .welcome p {
   font-size: large;
@@ -31,11 +33,26 @@ body {
 .navbar .links a {
   text-decoration: none;
 }
+.navbar .links a:visited {
+  color: inherit;
+}
 .navbar .links li {
   list-style: none;
 }
+.navbar .links #log-out {
+  border: none;
+  width: 75px;
+  height: 35px;
+  border-radius: 5px;
+  font-size: large;
+  background-color: #f5eeee;
+}
+.navbar .links #log-out:hover {
+  background-color: #f2f2ea;
+}
 
 .moviepage-wrapper {
+  background-color: #f0f0f0;
   display: flex;
   flex-direction: column;
 }

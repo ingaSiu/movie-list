@@ -4,6 +4,10 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script
+            src="https://kit.fontawesome.com/318d4eaf82.js"
+            crossorigin="anonymous"
+        ></script>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -32,19 +36,16 @@
             </ul>
         </nav>
 
-        <div class="search-wrapper">
-            <form id="search-form">
-                <input
-                    type="search"
-                    name="search"
-                    placeholder="Search for Movies"
-                />
-                <button type="submit" id="btn-search">OK</button>
-            </form>
-        </div>
+        <form id="search-form">
+            <div class="fa fa-search"></div>
+            <input
+                type="search"
+                name="search"
+                placeholder="Search for Movies"
+            />
+            <button id="btn-del-search" class="fa fa-times"></button>
+        </form>
 
-        <div id="wrapper-of-all-cards">
-            <!-- <div id="reviews-container"></div> -->
-        </div>
+        <div id="wrapper-of-all-cards"></div>
     </body>
 </html>

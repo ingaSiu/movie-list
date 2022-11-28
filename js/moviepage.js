@@ -106,6 +106,7 @@ const renderReview = (review) => {
 
         const btnMore = document.createElement("button");
         btnMore.textContent = "Read more...";
+        btnMore.setAttribute("class", "btn-card");
         btnMore.addEventListener("click", () => {
             if (content.textContent.length > 361) {
                 content.textContent = `REVIEW: ${review.content.slice(

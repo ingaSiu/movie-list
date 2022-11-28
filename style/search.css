@@ -7,6 +7,8 @@ body {
 
 .navbar {
   display: flex;
+  margin: 15px;
+  border-bottom: 2px solid #f5eeee;
 }
 .navbar .welcome {
   display: flex;
@@ -17,8 +19,8 @@ body {
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
 }
 .navbar .welcome p {
   font-size: large;
@@ -27,43 +29,67 @@ body {
   flex-grow: 2;
   display: flex;
   justify-content: space-evenly;
+  align-items: baseline;
 }
 .navbar .links a {
   text-decoration: none;
 }
+.navbar .links a:visited {
+  color: inherit;
+}
 .navbar .links li {
   list-style: none;
 }
-
-.logo {
-  border-radius: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 50px;
-  height: 50px;
-}
-
-.search-wrapper #search-form input {
-  width: 250px;
-  font-size: 15px;
-  border: 2px solid grey;
-  outline: darkgreen;
-}
-.search-wrapper #search-form button {
+.navbar .links #log-out {
+  border: none;
   width: 75px;
-  height: 30px;
+  height: 35px;
+  border-radius: 5px;
+  font-size: large;
+  background-color: #f5eeee;
+}
+.navbar .links #log-out:hover {
+  background-color: #f2f2ea;
+}
+
+#search-form {
+  display: flex;
+  margin: 10px 60px;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.5rem;
+  background: #d9e4e4;
+  padding: 10px;
+  border-radius: 13px;
+  box-shadow: 0.25rem 0.25rem 0rem #bbcfcf;
+}
+#search-form input {
+  margin: 0 10px 0 10px;
+  width: 100%;
+  border: none;
+  outline: none;
+  background: #d9e4e4;
+  font-size: 1.5rem;
+}
+#search-form button {
+  border: none;
+  background: #d9e4e4;
+  font-size: 1.5rem;
 }
 
 #wrapper-of-all-cards {
+  background-color: #f0f0f0;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 15px;
-  margin: 20px;
 }
 #wrapper-of-all-cards .wrapper-movie-card {
   display: flex;
   gap: 10px;
+  margin: 20px;
+  border: 1px solid black;
+  padding: 10px;
 }
 #wrapper-of-all-cards .wrapper-movie-card .image-container img {
   max-width: 300px;
@@ -71,14 +97,15 @@ body {
   -o-object-fit: contain;
      object-fit: contain;
 }
-#wrapper-of-all-cards .wrapper-movie-card .details-container h2 {
-  max-width: 280px;
+#wrapper-of-all-cards .wrapper-movie-card .details-container h3 {
+  width: 280px;
   margin-top: 0;
+  margin-bottom: 0;
 }
 #wrapper-of-all-cards .wrapper-movie-card .details-container p {
-  max-width: 280px;
+  width: 280px;
   text-align: justify;
 }
-#wrapper-of-all-cards .wrapper-movie-card .details-container button {
-  margin-right: 10px;
+#wrapper-of-all-cards .wrapper-movie-card .details-container .btn-card {
+  margin-right: 5px;
 }/*# sourceMappingURL=search.css.map */
