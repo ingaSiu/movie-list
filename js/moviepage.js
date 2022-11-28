@@ -10,6 +10,7 @@ const moviePageWrapper = document.querySelector(".moviepage-wrapper");
 const movieBlock = document.querySelector("#movie-info-block");
 let reviewArr = [];
 const reviewsWrapper = document.querySelector(".reviews-wrapper");
+const reviews = document.querySelector("#reviews");
 let movieId;
 //some parsing stuff for get params from URL
 //i am using movie_id get param to know which movie info to show
@@ -57,6 +58,7 @@ const renderMovieInfo = (movie) => {
 
     const budget = document.createElement("p");
     budget.textContent = `BUDGET: ${movie.budget}$`;
+
     info.appendChild(budget);
     movieBlock.appendChild(imgContainer);
     movieBlock.appendChild(info);
@@ -121,8 +123,8 @@ const renderReview = (review) => {
         });
         reviewBox.append(btnMore);
     }
-
-    reviewsWrapper.appendChild(reviewBox);
+    reviews.appendChild(reviewBox);
+    reviewsWrapper.appendChild(reviews);
 };
 
 const renderAllReviews = (reviews) => {
