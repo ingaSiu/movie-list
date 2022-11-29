@@ -18,14 +18,15 @@ logOut.addEventListener("click", () => {
     location.href = "./index.html";
 });
 
+// const searchInput = document.querySelector("#search-input");
+// delSearch.addEventListener("click", () => {
+//     searchInput.value = "";
+// });
+
 searchForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
     const searchInput = event.target.elements.search.value;
-
-    // delSearch.addEventListener("click", () => {
-    //     searchForm = "";
-    // });
 
     if (searchInput) {
         let url = new URL("https://api.themoviedb.org/3/search/movie");
