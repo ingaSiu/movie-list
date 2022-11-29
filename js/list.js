@@ -10,6 +10,8 @@ const logedInUser = JSON.parse(localStorage.getItem("User"));
 const welcomeMessage = document.querySelector("#message");
 welcomeMessage.textContent = `Welcome, ${logedInUser.name}!`;
 
+const emptyListMsg = document.querySelector("#empty-list-msg");
+
 let moviesArr = [];
 let listsArr = [];
 const listWrapper = document.querySelector("#list-wrapper");
@@ -18,8 +20,6 @@ const renderListCard = (movie, id) => {
     const wrapperListCard = document.createElement("div");
     wrapperListCard.setAttribute("class", "wrapper-list-card");
 
-    // const imgContainer = document.createElement("div");
-    // imgContainer.setAttribute("class", "image-container");
     const moviePoster = document.createElement("img");
     moviePoster.setAttribute(
         "src",
@@ -28,15 +28,12 @@ const renderListCard = (movie, id) => {
     if (!movie.poster_path) {
         moviePoster.setAttribute("src", "images/shiba.jpg");
     }
-    // imgContainer.appendChild(moviePoster);
+
     const infoDiv = document.createElement("div");
     infoDiv.setAttribute("class", "info-div");
 
     const movieName = document.createElement("h1");
     movieName.textContent = movie.original_title;
-
-    const btnDiv = document.createElement("div");
-    btnDiv.setAttribute("class", "btn-div");
 
     const btnMoreInfo = document.createElement("button");
     btnMoreInfo.textContent = "More Information";
@@ -59,7 +56,10 @@ const renderListCard = (movie, id) => {
             },
         }).then((response) => {
             if (response.ok) {
-                confirm("Do you want to delete this movie from list?");
+                // alert("Movie was removed from list");
+                // const deletionMessage = document.createElement("p");
+                // deletionMessage.textContent = "Movie was deleted from the list";
+                // listWrapper.prepend(deletionMessage);
                 moviesArr = moviesArr.filter((movie) => {
                     if (id !== movie.id) {
                         return true;
@@ -77,9 +77,8 @@ const renderListCard = (movie, id) => {
 
     wrapperListCard.appendChild(moviePoster);
     infoDiv.appendChild(movieName);
-    btnDiv.appendChild(infoLink);
-    btnDiv.appendChild(btnDelteCard);
-    infoDiv.appendChild(btnDiv);
+    infoDiv.appendChild(infoLink);
+    infoDiv.appendChild(btnDelteCard);
     wrapperListCard.appendChild(infoDiv);
     listWrapper.append(wrapperListCard);
 };
@@ -141,7 +140,7 @@ const getMovies = (listId) => {
                 console.log(moviesArr);
                 renderMovieList(moviesArr);
             } else {
-                alert("error");
+                emptyListMsg.style.display = "block";
             }
         });
 };

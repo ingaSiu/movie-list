@@ -154,7 +154,7 @@ const renderSearchCard = (movie) => {
 
     const detailsContainer = document.createElement("div");
     detailsContainer.setAttribute("class", "details-container");
-    const movieTitle = document.createElement("h3");
+    const movieTitle = document.createElement("h1");
     movieTitle.textContent = `${movie.original_title}`;
     detailsContainer.appendChild(movieTitle);
 

@@ -14,7 +14,8 @@
             height: 60px;
         }
         p {
-            font-size: large;
+            font-size: 20px;
+            font-weight: 600;
         }
     }
     .links {
@@ -25,6 +26,8 @@
 
         a {
             text-decoration: none;
+            font-weight: 600;
+            font-size: 25px;
             &:visited {
                 color: inherit;
             }
@@ -33,14 +36,38 @@
             list-style: none;
         }
         #log-out {
+            width: 150px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #fff;
+            cursor: pointer;
+            margin: 20px;
+            height: 55px;
+            text-align: center;
             border: none;
-            width: 75px;
-            height: 35px;
-            border-radius: 5px;
-            font-size: large;
-            background-color: #f5eeee;
+            background-size: 300% 100%;
+
+            border-radius: 50px;
+            -o-transition: all 0.4s ease-in-out;
+            -webkit-transition: all 0.4s ease-in-out;
+            transition: all 0.4s ease-in-out;
+
+            background-image: linear-gradient(
+                to right,
+                #25aae1,
+                #40e495,
+                #30dd8a,
+                #2bb673
+            );
+            box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
             &:hover {
-                background-color: #f2f2ea;
+                background-position: 100% 0;
+                -o-transition: all 0.4s ease-in-out;
+                -webkit-transition: all 0.4s ease-in-out;
+                transition: all 0.4s ease-in-out;
+            }
+            &:focus {
+                outline: none;
             }
         }
     }

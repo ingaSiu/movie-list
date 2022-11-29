@@ -2,7 +2,6 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Noto Sans Display", sans-serif;
-  font-family: "Noto Serif", serif;
 }
 
 .navbar {
@@ -41,15 +40,27 @@ body {
   list-style: none;
 }
 .navbar .links #log-out {
+  width: 150px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  margin: 20px;
+  height: 55px;
+  text-align: center;
   border: none;
-  width: 75px;
-  height: 35px;
-  border-radius: 5px;
-  font-size: large;
-  background-color: #f5eeee;
+  background-size: 300% 100%;
+  border-radius: 50px;
+  transition: all 0.4s ease-in-out;
+  background-image: linear-gradient(to right, #25aae1, #40e495, #30dd8a, #2bb673);
+  box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
 }
 .navbar .links #log-out:hover {
-  background-color: #f2f2ea;
+  background-position: 100% 0;
+  transition: all 0.4s ease-in-out;
+}
+.navbar .links #log-out:focus {
+  outline: none;
 }
 
 #search-form {
@@ -104,7 +115,7 @@ body {
 #wrapper-of-all-cards .wrapper-movie-card .details-container {
   padding: 5px;
 }
-#wrapper-of-all-cards .wrapper-movie-card .details-container h3 {
+#wrapper-of-all-cards .wrapper-movie-card .details-container h1 {
   width: 280px;
   margin-top: 0;
   margin-bottom: 0;
@@ -112,18 +123,27 @@ body {
 #wrapper-of-all-cards .wrapper-movie-card .details-container p {
   width: 280px;
   text-align: justify;
+  font-weight: bold;
 }
 #wrapper-of-all-cards .wrapper-movie-card .details-container .btn-card {
-  margin-right: 5px;
-  border: 4px solid #f0f0f0;
-  border-radius: 20px;
-  height: 25px;
-  font-size: 15px;
-  padding: 0px 3px 5px 3px;
-  background-color: #d9e4e4;
+  width: 125px;
+  margin: 5px;
+  font-size: 14px;
+  color: #fff;
+  cursor: pointer;
+  height: 40px;
+  text-align: center;
+  border: none;
+  background-size: 300% 100%;
+  border-radius: 50px;
+  transition: all 0.4s ease-in-out;
+  background-image: linear-gradient(to right, #0ba360, #3cba92, #30dd8a, #2bb673);
+  box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
 }
 #wrapper-of-all-cards .wrapper-movie-card .details-container .btn-card:hover {
-  border: 4px solid #bbcfcf;
-  background: #4974a5;
-  color: white;
+  background-position: 100% 0;
+  transition: all 0.4s ease-in-out;
+}
+#wrapper-of-all-cards .wrapper-movie-card .details-container .btn-card:focus {
+  outline: none;
 }/*# sourceMappingURL=search.css.map */
