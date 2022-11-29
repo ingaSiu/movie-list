@@ -18,11 +18,8 @@ const renderListCard = (movie, id) => {
     const wrapperListCard = document.createElement("div");
     wrapperListCard.setAttribute("class", "wrapper-list-card");
 
-    const movieName = document.createElement("h3");
-    movieName.textContent = movie.original_title;
-
-    const imgContainer = document.createElement("div");
-    imgContainer.setAttribute("class", "image-container");
+    // const imgContainer = document.createElement("div");
+    // imgContainer.setAttribute("class", "image-container");
     const moviePoster = document.createElement("img");
     moviePoster.setAttribute(
         "src",
@@ -31,7 +28,12 @@ const renderListCard = (movie, id) => {
     if (!movie.poster_path) {
         moviePoster.setAttribute("src", "images/shiba.jpg");
     }
-    imgContainer.appendChild(moviePoster);
+    // imgContainer.appendChild(moviePoster);
+    const infoDiv = document.createElement("div");
+    infoDiv.setAttribute("class", "info-div");
+
+    const movieName = document.createElement("h1");
+    movieName.textContent = movie.original_title;
 
     const btnDiv = document.createElement("div");
     btnDiv.setAttribute("class", "btn-div");
@@ -72,11 +74,13 @@ const renderListCard = (movie, id) => {
             alert("failed to remove");
         });
     });
-    wrapperListCard.appendChild(movieName);
-    wrapperListCard.appendChild(imgContainer);
+
+    wrapperListCard.appendChild(moviePoster);
+    infoDiv.appendChild(movieName);
     btnDiv.appendChild(infoLink);
     btnDiv.appendChild(btnDelteCard);
-    wrapperListCard.appendChild(btnDiv);
+    infoDiv.appendChild(btnDiv);
+    wrapperListCard.appendChild(infoDiv);
     listWrapper.append(wrapperListCard);
 };
 
