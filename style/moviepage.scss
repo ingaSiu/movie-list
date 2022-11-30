@@ -6,21 +6,67 @@
     flex-direction: column;
 
     h1 {
-        text-align: left;
         padding: 10px;
+        text-align: center;
+        font-size: 70px;
+        font-weight: 800;
     }
     #movie-info-block {
         display: flex;
-        gap: 10px;
+        justify-content: center;
+        gap: 30px;
         margin: 10px;
         border-bottom: 2px solid black;
         .movie-poster {
+            margin-bottom: 10px;
             img {
-                width: 400px;
+                max-width: 400px;
+                object-fit: fill;
+                border-radius: 10px;
             }
         }
         .info-div {
-            max-width: 30%;
+            max-width: 35%;
+
+            p {
+                font-size: 20px;
+                font-weight: 700;
+                text-align: justify;
+            }
+            .btn-imdb {
+                width: 230px;
+                margin: 5px;
+                font-size: 16px;
+                color: #fff;
+                cursor: pointer;
+                height: 40px;
+                text-align: center;
+                border: none;
+                background-size: 300% 100%;
+
+                border-radius: 50px;
+                -o-transition: all 0.4s ease-in-out;
+                -webkit-transition: all 0.4s ease-in-out;
+                transition: all 0.4s ease-in-out;
+
+                background-image: linear-gradient(
+                    to right,
+                    #0ba360,
+                    #3cba92,
+                    #30dd8a,
+                    #2bb673
+                );
+                box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
+                &:hover {
+                    background-position: 100% 0;
+                    -o-transition: all 0.4s ease-in-out;
+                    -webkit-transition: all 0.4s ease-in-out;
+                    transition: all 0.4s ease-in-out;
+                }
+                &:focus {
+                    outline: none;
+                }
+            }
         }
     }
 }
@@ -31,11 +77,18 @@
     #reviews {
         margin: 10px;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: repeat(auto-fit, 550px);
+        justify-content: center;
+
         gap: 20px;
+        #no-reviews {
+            font-size: 30px;
+            font-weight: 500;
+            display: none;
+        }
         .review-box {
-            border: 1px solid black;
+            border: 3px solid black;
+            border-radius: 10px;
             text-align: justify;
             padding: 10px;
         }

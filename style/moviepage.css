@@ -22,7 +22,8 @@ body {
   height: 60px;
 }
 .navbar .welcome p {
-  font-size: large;
+  font-size: 20px;
+  font-weight: 600;
 }
 .navbar .links {
   flex-grow: 2;
@@ -32,6 +33,8 @@ body {
 }
 .navbar .links a {
   text-decoration: none;
+  font-weight: 600;
+  font-size: 25px;
 }
 .navbar .links a:visited {
   color: inherit;
@@ -51,14 +54,12 @@ body {
   border: none;
   background-size: 300% 100%;
   border-radius: 50px;
-  moz-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
-  background-image: linear-gradient(to right, #0ba360, #3cba92, #30dd8a, #2bb673);
-  box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
+  background-image: linear-gradient(to right, #25aae1, #40e495, #30dd8a, #2bb673);
+  box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
 }
 .navbar .links #log-out:hover {
   background-position: 100% 0;
-  moz-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
 }
 .navbar .links #log-out:focus {
@@ -71,20 +72,56 @@ body {
   flex-direction: column;
 }
 .moviepage-wrapper h1 {
-  text-align: left;
   padding: 10px;
+  text-align: center;
+  font-size: 70px;
+  font-weight: 800;
 }
 .moviepage-wrapper #movie-info-block {
   display: flex;
-  gap: 10px;
+  justify-content: center;
+  gap: 30px;
   margin: 10px;
   border-bottom: 2px solid black;
 }
+.moviepage-wrapper #movie-info-block .movie-poster {
+  margin-bottom: 10px;
+}
 .moviepage-wrapper #movie-info-block .movie-poster img {
-  width: 400px;
+  max-width: 400px;
+  -o-object-fit: fill;
+     object-fit: fill;
+  border-radius: 10px;
 }
 .moviepage-wrapper #movie-info-block .info-div {
-  max-width: 30%;
+  max-width: 35%;
+}
+.moviepage-wrapper #movie-info-block .info-div p {
+  font-size: 20px;
+  font-weight: 700;
+  text-align: justify;
+}
+.moviepage-wrapper #movie-info-block .info-div .btn-imdb {
+  width: 230px;
+  margin: 5px;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+  height: 40px;
+  text-align: center;
+  border: none;
+  background-size: 300% 100%;
+  border-radius: 50px;
+  transition: all 0.4s ease-in-out;
+  background-image: linear-gradient(to right, #0ba360, #3cba92, #30dd8a, #2bb673);
+  box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
+}
+.moviepage-wrapper #movie-info-block .info-div .btn-imdb:hover {
+  background-position: 100% 0;
+  transition: all 0.4s ease-in-out;
+}
+.moviepage-wrapper #movie-info-block .info-div .btn-imdb:focus {
+  outline: none;
 }
 
 .reviews-wrapper {
@@ -95,12 +132,18 @@ body {
 .reviews-wrapper #reviews {
   margin: 10px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, 550px);
+  justify-content: center;
   gap: 20px;
 }
+.reviews-wrapper #reviews #no-reviews {
+  font-size: 30px;
+  font-weight: 500;
+  display: none;
+}
 .reviews-wrapper #reviews .review-box {
-  border: 1px solid black;
+  border: 3px solid black;
+  border-radius: 10px;
   text-align: justify;
   padding: 10px;
 }/*# sourceMappingURL=moviepage.css.map */

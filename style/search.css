@@ -22,7 +22,8 @@ body {
   height: 60px;
 }
 .navbar .welcome p {
-  font-size: large;
+  font-size: 20px;
+  font-weight: 600;
 }
 .navbar .links {
   flex-grow: 2;
@@ -32,6 +33,8 @@ body {
 }
 .navbar .links a {
   text-decoration: none;
+  font-weight: 600;
+  font-size: 25px;
 }
 .navbar .links a:visited {
   color: inherit;
@@ -104,6 +107,7 @@ body {
 }
 #wrapper-of-all-cards .wrapper-movie-card .image-container {
   padding: 5px;
+  align-self: center;
 }
 #wrapper-of-all-cards .wrapper-movie-card .image-container img {
   max-width: 300px;

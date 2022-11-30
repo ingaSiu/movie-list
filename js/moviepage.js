@@ -8,9 +8,12 @@ welcomeMessage.textContent = `Welcome, ${logedInUser.name}!`;
 
 const moviePageWrapper = document.querySelector(".moviepage-wrapper");
 const movieBlock = document.querySelector("#movie-info-block");
+
 let reviewArr = [];
 const reviewsWrapper = document.querySelector(".reviews-wrapper");
 const reviews = document.querySelector("#reviews");
+const noReviews = document.querySelector("#no-reviews");
+
 let movieId;
 //some parsing stuff for get params from URL
 //i am using movie_id get param to know which movie info to show
@@ -40,6 +43,10 @@ const renderMovieInfo = (movie) => {
     const info = document.createElement("div");
     info.setAttribute("class", "info-div");
 
+    const engTitle = document.createElement("p");
+    engTitle.textContent = `ENGLISH TITLE: ${movie.title}`;
+    info.appendChild(engTitle);
+
     const overview = document.createElement("p");
     overview.textContent = `ABOUT: ${movie.overview}`;
     info.appendChild(overview);
@@ -58,8 +65,39 @@ const renderMovieInfo = (movie) => {
 
     const budget = document.createElement("p");
     budget.textContent = `BUDGET: ${movie.budget}$`;
-
     info.appendChild(budget);
+
+    const imdbBtn = document.createElement("button");
+    imdbBtn.textContent = " More Information on IMDb";
+    imdbBtn.setAttribute("class", "btn-imdb");
+    info.appendChild(imdbBtn);
+    imdbBtn.addEventListener("click", () => {
+        let url = new URL(
+            `https://api.themoviedb.org/3/movie/${movieId}/external_ids`
+        );
+
+        const params = {
+            api_key: "c02a236a02faf40ecbb1944497d71eff",
+        };
+
+        url.search = new URLSearchParams(params).toString();
+        fetch(url)
+            .then((response) => {
+                if (response.ok) {
+                    return response.json();
+                }
+            })
+            .then((result) => {
+                if (result) {
+                    console.log(result);
+                    window.open(
+                        "https://www.imdb.com/title/" + result.imdb_id,
+                        "_blank"
+                    );
+                }
+            });
+    });
+
     movieBlock.appendChild(imgContainer);
     movieBlock.appendChild(info);
     moviePageWrapper.appendChild(movieName);
@@ -149,10 +187,13 @@ const getReviews = (movieId) => {
             }
         })
         .then((reviews) => {
-            if (reviews) {
+            if (reviews && reviews.results.length > 0) {
+                console.log(reviews.results);
                 reviewArr = reviews.results;
                 console.log(reviewArr);
                 renderAllReviews(reviewArr);
+            } else {
+                noReviews.style.display = "block";
             }
         });
 };
