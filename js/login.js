@@ -9,14 +9,12 @@ const alreadyMember = document.querySelector("#already-member");
 const failPswMessage = document.querySelector("#fail-psw");
 const registrationOk = document.querySelector("#registration-ok");
 
-directToRegistration.addEventListener("click", (event) => {
-    event.preventDefault();
+directToRegistration.addEventListener("click", () => {
     registrationBox.style.display = "block";
     loginBox.style.display = "none";
 });
 
-alreadyMember.addEventListener("click", (event) => {
-    event.preventDefault();
+alreadyMember.addEventListener("click", () => {
     registrationBox.style.display = "none";
     loginBox.style.display = "block";
 });
@@ -50,18 +48,17 @@ registrationForm.addEventListener("submit", (event) => {
                 if (response.ok) {
                     return response.json();
                 }
+                if (response.status === 409) {
+                    alert("User already exists");
+                    return;
+                }
+                alert("registration failed");
             })
             .then((result) => {
                 if (result) {
                     registrationOk.style.display = "block";
                     failPswMessage.style.display = "none";
-                } else {
-                    //TODO
-                    //pasirasyti kad registracija nesekminga
-                    alert("registration failed");
                 }
-
-                // location.reload();
             });
     } else {
         failPswMessage.style.display = "block";

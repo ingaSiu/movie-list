@@ -68,7 +68,7 @@ const renderMovieInfo = (movie) => {
     info.appendChild(budget);
 
     const imdbBtn = document.createElement("button");
-    imdbBtn.textContent = " More Information on IMDb";
+    imdbBtn.textContent = "More Information on IMDb";
     imdbBtn.setAttribute("class", "btn-imdb");
     info.appendChild(imdbBtn);
     imdbBtn.addEventListener("click", () => {
@@ -188,7 +188,6 @@ const getReviews = (movieId) => {
         })
         .then((reviews) => {
             if (reviews && reviews.results.length > 0) {
-                console.log(reviews.results);
                 reviewArr = reviews.results;
                 console.log(reviewArr);
                 renderAllReviews(reviewArr);

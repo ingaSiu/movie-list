@@ -18,14 +18,18 @@ logOut.addEventListener("click", () => {
     location.href = "./index.html";
 });
 
-// const searchInput = document.querySelector("#search-input");
-// delSearch.addEventListener("click", () => {
-//     searchInput.value = "";
-// });
+const searchInput = document.querySelector("#search-input");
+/*delSearch.addEventListener("click", (event) => {
+    event.preventDefault();
+    console.log("clicked general");
+});*/
+delSearch.addEventListener("mouseup", (event) => {
+    event.preventDefault();
+    searchInput.value = "";
+});
 
 searchForm.addEventListener("submit", (event) => {
     event.preventDefault();
-
     const searchInput = event.target.elements.search.value;
 
     if (searchInput) {
@@ -68,14 +72,16 @@ const saveMovie = (movieId, listId) => {
             if (response.ok) {
                 return response.json();
             }
-        })
-        .then((listMovie) => {
-            if (!listMovie) {
-                alert("failed");
+            if (response.status === 409) {
+                alert("Already exists");
                 return;
             }
-
-            console.log("added to list");
+            alert("failed");
+        })
+        .then((listMovie) => {
+            if (listMovie) {
+                console.log("added to list");
+            }
         });
 };
 
@@ -189,6 +195,7 @@ const renderSearchCard = (movie) => {
     const btnMoreInfo = document.createElement("button");
     btnMoreInfo.textContent = "More Information";
     btnMoreInfo.setAttribute("class", "btn-card");
+
     const infoLink = document.createElement("a");
     infoLink.setAttribute("href", "./moviepage.html?movie_id=" + movie.id);
     infoLink.setAttribute("target", "_blank");

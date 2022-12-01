@@ -45,7 +45,7 @@ const renderListCard = (movie, id) => {
     infoLink.append(btnMoreInfo);
 
     const btnDelteCard = document.createElement("button");
-    btnDelteCard.textContent = "Delete Movie Card";
+    btnDelteCard.textContent = "Remove From List";
     btnDelteCard.setAttribute("class", "btn-card");
     btnDelteCard.addEventListener("click", () => {
         fetch(`http://ingasiu.online/movie/${id}`, {
@@ -57,16 +57,24 @@ const renderListCard = (movie, id) => {
         }).then((response) => {
             if (response.ok) {
                 // alert("Movie was removed from list");
-                // const deletionMessage = document.createElement("p");
-                // deletionMessage.textContent = "Movie was deleted from the list";
-                // listWrapper.prepend(deletionMessage);
+                const deletionMessage = document.createElement("p");
+                deletionMessage.textContent = "Movie was deleted from the list";
+
                 moviesArr = moviesArr.filter((movie) => {
                     if (id !== movie.id) {
                         return true;
                     }
                     return false;
                 });
+
                 renderMovieList(moviesArr);
+                if (moviesArr.length === 0) {
+                    emptyListMsg.style.display = "block";
+                }
+                listWrapper.prepend(deletionMessage);
+                setTimeout(() => {
+                    deletionMessage.style.display = "none";
+                }, 2000);
                 return;
             }
             //if reponse is not ok and not 404 then something has failed.
@@ -145,8 +153,6 @@ const getMovies = (listId) => {
         });
 };
 
-// getMovies(1);
-
 const getListsAndMovies = () => {
     fetch(`http://ingasiu.online/user-lists/${logedInUser.id}`, {
         method: "GET",
@@ -157,6 +163,10 @@ const getListsAndMovies = () => {
         .then((response) => {
             if (response.ok) {
                 return response.json();
+            }
+            if (response.status === 404) {
+                emptyListMsg.style.display = "block";
+                return;
             }
             //if reponse is not ok and not 404 then something has failed.
             //return error and do nothing else
